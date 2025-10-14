@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: cloud-native-book
+spec:
+  #only one parameter can be set at time, minAvailable or maxUnavailable
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: cloud-native-book
